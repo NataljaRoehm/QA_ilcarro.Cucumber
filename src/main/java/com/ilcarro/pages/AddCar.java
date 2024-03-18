@@ -1,5 +1,6 @@
 package com.ilcarro.pages;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,9 +15,11 @@ public class AddCar extends BasePage {
   @FindBy(id = "pickUpPlace")
   WebElement addLocation;
 
-
   public AddCar pickUpPlace(String location) {
     type(addLocation, location);
+    pause(1000);
+    addLocation.sendKeys(Keys.DOWN);
+    addLocation.sendKeys(Keys.ENTER);
     return this;
   }
 
@@ -87,7 +90,7 @@ public class AddCar extends BasePage {
   }
 
 
-  @FindBy(xpath = "//label[contains(text(),'Add photos of your car')]")
+  @FindBy(xpath ="//input[@id='photos']")
   WebElement loadPhoto;
 
   public AddCar uploadPhoto(String photo) {

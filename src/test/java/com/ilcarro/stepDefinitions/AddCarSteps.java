@@ -10,12 +10,15 @@ import io.cucumber.java.en_scouse.An;
 
 public class AddCarSteps {
 
+  //@And("User enter a pickUpPlace")
+  //  public void userEnterAPickUpPlace() {
+  //  }
   @When("User click on the Let the car work")
   public void click_on_Let_car_work() {
     new LoginPage(driver).clickOnTheCarWork();
   }
 
-  @And("And User enter a pickUpPlace")
+  @And("User enter a pickUpPlace")
   public void enter_location() {
     new AddCar(driver).pickUpPlace("Tel Aviv, Israel");
   }
@@ -42,7 +45,7 @@ public class AddCarSteps {
 
   @And("User enter number if seats")
   public void enter_number_seat(){
-    new AddCar(driver).enterNumberSeat("1");
+    new AddCar(driver).enterNumberSeat("3");
   }
 
   @And("User enter car class")
@@ -62,7 +65,7 @@ public class AddCarSteps {
 
   @An("User upload car photo")
   public void load_photo(){
-    String photo = "/C:/Users/AIT TR Student/Desktop/2.png";
+    String photo = "C:/Users/AIT TR Student/Desktop/2.jpeg";
     new AddCar(driver).uploadPhoto(photo);
   }
 
@@ -70,4 +73,6 @@ public class AddCarSteps {
   public void click_on_submit(){
     new AddCar(driver).clickSubmitButton();
   }
+
+
 }
